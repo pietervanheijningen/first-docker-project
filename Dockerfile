@@ -1,7 +1,4 @@
-FROM php:7.4-cli
+FROM richarvey/nginx-php-fpm:1.5.0
 
-COPY . /usr/src/phpapp
-
-WORKDIR /usr/src/phpapp
-
-CMD [ "php", "public/index.php" ]
+RUN rm /var/www/html/*
+COPY public /var/www/html
