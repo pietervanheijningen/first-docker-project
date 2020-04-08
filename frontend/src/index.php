@@ -8,6 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-Hello <?= $_SERVER['HTTP_USER_AGENT'] ?>!
+<p>Hello <?= $_SERVER['HTTP_USER_AGENT'] ?>!</p>
+<button onclick="actionButton()">do something</button>
+<code>
+
+</code>
+<script>
+    function actionButton() {
+        fetch('http://localhost:8080/')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                document.getElementsByTagName("code")[0].innerText = JSON.stringify(data)
+            });
+    }
+</script>
 </body>
 </html>
