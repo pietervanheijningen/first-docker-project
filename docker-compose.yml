@@ -3,8 +3,8 @@ version: '3.7'
 services:
   backend-server:
     build: ./backend
-#    volumes:
-#      - ./backend:/home/node/app
+    volumes:
+      - ./backend/app.js:/home/node/app/app.js
     ports:
       - 8080:80
   frontend-server:
