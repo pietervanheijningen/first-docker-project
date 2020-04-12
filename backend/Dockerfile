@@ -3,7 +3,7 @@ WORKDIR /home/node/app
 
 COPY . /home/node/app
 RUN npm install
+RUN npm install -g nodemon
 
 EXPOSE 80
-
-CMD node app.js
+CMD nodemon app.js
